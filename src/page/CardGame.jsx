@@ -92,7 +92,7 @@ const CardGame = ({ players, setPalayers, playerList }) => {
     console.log("OK")
     setPalayers(playerList)
     setRound(0)
-    setScoreHistory(history)
+    setScoreHistory([])
     setScore(scoreInput)
     navigate("/")
   }
@@ -103,7 +103,7 @@ const CardGame = ({ players, setPalayers, playerList }) => {
         variant="h5"
         style={{ color: "#FF0000", textAlign: "center" }}
       >
-        Ván {round}
+        Ván {round + 1}
       </Typography>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         <Card style={{ width: "23.8%", margin: "2px 2px" }}>
