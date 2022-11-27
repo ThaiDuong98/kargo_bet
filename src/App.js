@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Game from './page/Game';
+import InitialGame from './page/InitialGame';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 style={{textAlign: "center", marginTop: "5px", fontWeight: "bold", color: "	#00FF00"}}>Welcome to Kargo bet</h1>
+      <Routes>
+        <Route path='/' element={<InitialGame />}/>
+        <Route path='/game' element={<Game />}/>
+      </Routes>
     </div>
   );
 }
