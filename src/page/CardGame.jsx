@@ -89,7 +89,6 @@ const CardGame = ({ players, setPalayers, playerList }) => {
   };
 
   const resetGame = () => {
-    console.log("OK")
     setPalayers(playerList)
     setRound(0)
     setScoreHistory([])
