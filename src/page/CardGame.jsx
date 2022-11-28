@@ -107,7 +107,7 @@ const CardGame = ({ players, setPalayers, playerList }) => {
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         <Card style={{ width: "23.8%", margin: "2px 2px" }}>
           <CardContent style={styleInput}>
-            <Typography>{players[0].player}</Typography>
+            <Typography variant="h5" style={{fontWeight: "bold", color: "#483D8B"}}>{players[0].player}</Typography>
             <TextField
               size="small"
               fullWidth
@@ -120,7 +120,7 @@ const CardGame = ({ players, setPalayers, playerList }) => {
         </Card>
         <Card style={{ width: "23.8%", margin: "2px 2px" }}>
           <CardContent style={styleInput}>
-            <Typography>{players[1].player}</Typography>
+            <Typography variant="h5" style={{fontWeight: "bold", color: "#FF0000"}}>{players[1].player}</Typography>
             <TextField
               size="small"
               fullWidth
@@ -133,7 +133,7 @@ const CardGame = ({ players, setPalayers, playerList }) => {
         </Card>
         <Card style={{ width: "23.8%", margin: "2px 2px" }}>
           <CardContent style={styleInput}>
-            <Typography>{players[2].player}</Typography>
+            <Typography variant="h5" style={{fontWeight: "bold", color: "#228B22"}}>{players[2].player}</Typography>
             <TextField
               size="small"
               fullWidth
@@ -146,7 +146,7 @@ const CardGame = ({ players, setPalayers, playerList }) => {
         </Card>
         <Card style={{ width: "23.8%", margin: "2px 2px" }}>
           <CardContent style={styleInput}>
-            <Typography>{players[3].player}</Typography>
+            <Typography variant="h5" style={{fontWeight: "bold", color: "#4682B4"}}>{players[3].player}</Typography>
             <TextField
               size="small"
               fullWidth

@@ -15,10 +15,10 @@ const History = ({ players, scoreHistory }) => {
           <TableHead>
             <TableRow>
               <TableCell>Ván</TableCell>
-              <TableCell>{players[0].player}</TableCell>
-              <TableCell>{players[1].player}</TableCell>
-              <TableCell>{players[2].player}</TableCell>
-              <TableCell>{players[3].player}</TableCell>
+              <TableCell variant="h5" style={{fontWeight: "bold", color: "#483D8B"}}>{players[0].player}</TableCell>
+              <TableCell variant="h5" style={{fontWeight: "bold", color: "#FF0000"}}>{players[1].player}</TableCell>
+              <TableCell variant="h5" style={{fontWeight: "bold", color: "#228B22"}}>{players[2].player}</TableCell>
+              <TableCell variant="h5" style={{fontWeight: "bold", color: "#4682B4"}}>{players[3].player}</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -35,10 +35,10 @@ const History = ({ players, scoreHistory }) => {
             ))}
              <TableRow>
                 <TableCell component="th" scope="row">Tổng</TableCell>
-                <TableCell>{scoreHistory[0].result}</TableCell>
-                <TableCell>{scoreHistory[1].result}</TableCell>
-                <TableCell>{scoreHistory[2].result}</TableCell>
-                <TableCell>{scoreHistory[3].result}</TableCell>
+                <TableCell variant="h5" style={{fontWeight: "bold", color: "#483D8B"}}>{scoreHistory[0].result}</TableCell>
+                <TableCell variant="h5" style={{fontWeight: "bold", color: "#FF0000"}}>{scoreHistory[1].result}</TableCell>
+                <TableCell variant="h5" style={{fontWeight: "bold", color: "#228B22"}}>{scoreHistory[2].result}</TableCell>
+                <TableCell variant="h5" style={{fontWeight: "bold", color: "#4682B4"}}>{scoreHistory[3].result}</TableCell>
               </TableRow>
           </TableBody>
         </Table>
