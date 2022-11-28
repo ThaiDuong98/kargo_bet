@@ -5,7 +5,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import History from "./History";
 
@@ -50,6 +50,10 @@ const CardGame = ({ players, setPalayers, playerList }) => {
     });
   };
 
+  useEffect(() => {
+    console.log(scoreHistory)
+  }, [scoreHistory])
+
   const isValid = () => {
     if (
       (score && score.scoreUser1 === "") ||
@@ -89,10 +93,13 @@ const CardGame = ({ players, setPalayers, playerList }) => {
   };
 
   const resetGame = () => {
+    debugger
     setPalayers(playerList)
     setRound(0)
-    setScoreHistory([])
     setScore(scoreInput)
+    if(scoreHistory[0].score.length > 0){
+      setScoreHistory([])
+    }
     navigate("/")
   }
 
