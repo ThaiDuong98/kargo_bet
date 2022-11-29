@@ -35,6 +35,7 @@ const CardGame = ({ players, setPalayers, playerList }) => {
   const [round, setRound] = useState(0);
   const [scoreHistory, setScoreHistory] = useState(history)
   const [score, setScore] = useState(scoreInput);
+  const [isGoback, setGoback] = useState(false)
 
   const onchangeScore = (e) => {
     const name = e.target.name;
@@ -51,8 +52,12 @@ const CardGame = ({ players, setPalayers, playerList }) => {
   };
 
   useEffect(() => {
-    console.log(scoreHistory)
-  }, [scoreHistory])
+   if(isGoback){
+    setTimeout(() => {
+      navigate("/")
+    }, 3000)
+   }
+  }, [isGoback])
 
   const isValid = () => {
     if (
@@ -73,10 +78,10 @@ const CardGame = ({ players, setPalayers, playerList }) => {
     }
 
     const newScoreHistory = [...scoreHistory]
-    newScoreHistory[0].score.push(score.scoreUser1)
-    newScoreHistory[1].score.push(score.scoreUser2)
-    newScoreHistory[2].score.push(score.scoreUser3)
-    newScoreHistory[3].score.push(score.scoreUser4)
+    newScoreHistory[0]?.score.push(score.scoreUser1)
+    newScoreHistory[1]?.score.push(score.scoreUser2)
+    newScoreHistory[2]?.score.push(score.scoreUser3)
+    newScoreHistory[3]?.score.push(score.scoreUser4)
 
     for(let x=0; x < newScoreHistory.length; x++){
       let sum = 0
@@ -89,18 +94,19 @@ const CardGame = ({ players, setPalayers, playerList }) => {
     setScoreHistory(newScoreHistory)
     setScore(scoreInput)
     setRound((prev) => prev + 1)
-    
   };
 
   const resetGame = () => {
-    debugger
     setPalayers(playerList)
     setRound(0)
     setScore(scoreInput)
-    if(scoreHistory[0].score.length > 0){
-      setScoreHistory([])
-    }
-    navigate("/")
+    setScoreHistory([
+      {score: [], result: 0},
+      {score: [], result: 0},
+      {score: [], result: 0},
+      {score: [], result: 0}
+    ])
+    setGoback(true)
   }
 
   return (

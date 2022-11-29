@@ -16,8 +16,8 @@ const InitialGame = () => {
     setUser({
       ...user,
       [name]:
-        e.target.value.length > 6
-          ? e.target.value.substring(0, 6)
+        e.target.value.length > 5
+          ? e.target.value.substring(0, 5)
           : e.target.value,
     });
   };
