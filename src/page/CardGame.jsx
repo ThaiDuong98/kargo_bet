@@ -35,7 +35,6 @@ const CardGame = ({ players, setPalayers, playerList }) => {
   const [round, setRound] = useState(0);
   const [scoreHistory, setScoreHistory] = useState(history)
   const [score, setScore] = useState(scoreInput);
-  const [isGoback, setGoback] = useState(false)
 
   const onchangeScore = (e) => {
     const name = e.target.name;
@@ -50,14 +49,6 @@ const CardGame = ({ players, setPalayers, playerList }) => {
       [name]: value,
     });
   };
-
-  useEffect(() => {
-   if(isGoback){
-    setTimeout(() => {
-      navigate("/")
-    }, 3000)
-   }
-  }, [isGoback])
 
   const isValid = () => {
     if (
@@ -96,7 +87,7 @@ const CardGame = ({ players, setPalayers, playerList }) => {
     setRound((prev) => prev + 1)
   };
 
-  const resetGame = () => {
+  const resetGame = async () => {
     setPalayers(playerList)
     setRound(0)
     setScore(scoreInput)
@@ -106,7 +97,6 @@ const CardGame = ({ players, setPalayers, playerList }) => {
       {score: [], result: 0},
       {score: [], result: 0}
     ])
-    setGoback(true)
   }
 
   return (
